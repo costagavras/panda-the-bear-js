@@ -60,3 +60,32 @@ formSubmit.disabled = true;
 var infoPrivate = document.querySelectorAll('.bio-info-value');
 for (var i = 0; i < infoPrivate.length; i++) {
        infoPrivate[i].innerText = "";}
+
+
+Removing Elements from the DOM
+
+var barTimeTravel = document.querySelectorAll(".bar-default")[2];
+var skills = barTimeTravel.parentElement;
+skills.removeChild(barTimeTravel);
+
+
+Adding Elements to the DOM
+var pikachu = document.querySelector("#right-image img");
+var clonePik = pikachu.cloneNode();
+var pcont = document.querySelector(".portfolio-container");
+pcont.appendChild(clonePik);
+
+for (var i = 1; i <= 11; i++) {
+      var clonePik = pikachu.cloneNode();
+       pcont.appendChild(clonePik);}
+
+
+Updating Last update on:
+var ul_list = document.querySelector('ul', '.bio-info');
+ul_list.appendChild(listItem);
+listItem.className = "bio-info-item";
+leftSpan.className = 'bio-info-title';
+var leftSpanTime = document.createElement('span');
+leftSpanTime.className = 'bio-info-value bio-info-time';
+listItem.appendChild(leftSpanTime);
+leftSpanTime.innerText = new Date(Date.now());
